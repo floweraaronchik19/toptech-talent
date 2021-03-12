@@ -1,0 +1,12 @@
+// Dropdowns
+.dropdown {
+  .dropdown-menu {
+    box-shadow: $z-depth-7;
+    border: 0;
+    .dropdown-item {
+      &:active {
+        background-color: $grey-darken-1;
+      }
+    }
+  }
+}

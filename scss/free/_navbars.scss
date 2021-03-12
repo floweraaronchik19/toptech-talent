@@ -1,0 +1,156 @@
+// Navbars
+.navbar {
+  box-shadow: $z-depth-0;
+  font-weight: $navbar-cloudemployee-font-weight;
+  font-size: 15px;
+  background: $white-base !important;
+  @media(min-width: 992px) and (max-width: 1255px) {
+    font-size: 14px !important;
+  }
+ 
+  @media (max-width: 991px) {
+    &:not(.top-nav-collapse) {
+      background: $white-base !important;
+    }
+  }
+  @media (min-width: 800px) and (max-width: 850px) {
+    &:not(.top-nav-collapse) {
+        background: $white-base !important;
+    }
+  }
+  form {
+    .md-form {
+      input {
+        margin: 0 $navbar-form-input-mr $navbar-form-input-mb $navbar-form-input-ml;
+      }
+    }
+  }
+  .breadcrumb {
+    margin: 0;
+    padding: $navbar-breadcrumb-padding-top 0 0 $navbar-breadcrumb-padding-left;
+    background-color: inherit;
+    font-size: $navbar-double-font-size;
+    font-weight: $navbar-font-weight;
+    .breadcrumb-item {
+      color: $white-base;
+      &.active {
+        color: $navbar-breadcrumb-color;
+      }
+      &:before {
+        color: $navbar-breadcrumb-color;
+      }
+    }
+  }
+  .navbar-toggler {
+    outline: 0;
+    border-width: 0;
+  }
+  .nav-flex-icons {
+    flex-direction: row;
+  }
+  .container {
+    @media (max-width: $medium-screen) {
+      width: 100%;
+      .navbar-toggler-right {
+        right: 0;
+      }
+    }
+  }
+  .nav-item {
+    position: relative;
+    &:hover {
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 90%;
+        width: 100%;
+        border-bottom: 2px solid $top-tech-blue-base;
+        @media(max-width: 991px) {
+          border-bottom: 0;
+        }
+      }
+    }
+    &:nth-child(5), &:last-child {
+      &:hover {
+        &::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 90%;
+          width: 100%;
+          border-bottom: 0;
+        }
+      }
+    }
+    .nav-link {
+      display: block;
+      &.disabled {
+        &:active {
+          pointer-events: none;
+        }
+      }
+      .fa {
+        padding-right: $navbar-flex-icons-padding-lg;
+        padding-left: $navbar-flex-icons-padding-lg;
+      }
+      @media (max-width: $medium-screen) {
+        padding-right: $navbar-flex-icons-padding-md;
+        padding-left: $navbar-flex-icons-padding-md;
+      }
+    }
+  }
+  .dropdown-menu {
+    position: absolute !important;
+    margin-top: 0;
+    a {
+      padding: $navbar-dropdown-menu-padding;
+      font-size: $navbar-dropdown-font-size;
+      font-weight: $navbar-font-weight;
+      color: $top-tech-blue-base;
+      font-family: "GothamBook", sans-serif;
+    }
+    form {
+      @media (max-width: $small-screen) {
+        width: 17rem;
+      }
+      @media (min-width: $small-screen) {
+        width: 22rem;
+      }
+    }
+  }
+  .dropdown-toggle {
+    &::after {
+      color: $blue-accent-5;
+    }
+  }
+  &.navbar-light {
+    @include make-navbar($navbar-light-disabled-color, $navbar-light-toggler-icon, $black, $navbar-light-hover-color, $navbar-light-bg-active-color);
+  }
+  &.navbar-dark {
+    @include make-navbar($navbar-dark-disabled-color, $navbar-dark-toggler-icon, $white, $navbar-dark-hover-color, $navbar-dark-bg-active-color);
+  }
+  // CUSTOM NAVBAR CLOUD EMPLOYEE
+  &.navbar-cloudemployee {
+    @include make-navbar($navbar-cloudemployee-disabled-color, $navbar-cloudemployee-toggler-icon, $top-tech-blue-base, $navbar-cloudemployee-hover-color, $navbar-cloudemployee-bg-active-color);
+  }
+  &.scrolling-navbar {
+    &.top-nav-collapse {
+      border-bottom: 1px solid $top-tech-light-base;
+      max-height: 6em;
+    }
+    @media (min-width: $small-screen) {
+      transition: $navbar-scrolling-transition;
+      padding-top: $navbar-scrolling-padding;
+      padding-bottom: $navbar-scrolling-padding;
+      .navbar-nav > li {
+        transition-duration: $navbar-scrolling-transition-duration;
+      }
+      &.top-nav-collapse {
+        padding-top: $navbar-top-collapse-padding;
+        padding-bottom: $navbar-top-collapse-padding;
+        background-color: $white-base !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+// Footers
+footer {
+  background-color: #f4f7ff;
+  &.page-footer {
+    bottom: 0;
+    color: $white-base;
+    .container-fluid {
+      width: auto;
+    }
+    .container {
+      color: $top-tech-blue-base;
+      span {
+        font-family: "OpenSansBold", sans-serif;
+      }
+      input[type="text"], textarea {
+        box-shadow: $z-depth-6;
+        border: 0;
+        &:active, &:focus {
+          border: solid 1px $top-tech-blue-base;
+          box-shadow: $z-depth-0;
+          background-color: $white-base;
+        }
+      }
+      ul {
+        &.list-unstyled {
+          li {
+            
+            span , a{
+              color: $top-tech-grey-dark-base !important;
+              font-family: "OpenSans", sans-serif;
+              font-size: $navbar-cloudemployee-font-size;
+              font-weight: normal;
+              font-style: normal;
+              font-stretch: normal;
+              line-height: 1.75;
+              letter-spacing: normal;
+              text-align: left;
+              &:hover {
+                color: $top-tech-blue-base !important;
+              }
+            }
+            a {
+              &.marginlist {
+                margin-left: 10px;
+              }
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          } 
+        }
+      }
+    }
+    .btn-floating {
+      box-shadow: $z-depth-0;
+      background-color: $top-tech-blue-base-2;
+      &:hover {
+        background-color: $top-tech-blue-base;
+      }
+    }
+    .footer-copyright {
+      overflow: hidden;
+      color: $top-tech-blue-base;
+      line-height: 2;
+      span {
+        font-family: "OpenSans", sans-serif;
+        font-size: 16px;
+      }
+    }
+    a {
+      color: $top-tech-blue-base;
+    }
+  }
+}

@@ -1,0 +1,88 @@
+// Cards
+.card {
+  box-shadow: $z-depth-7;
+  border: 0;
+  font-weight: 400;
+  border-radius: 10px;
+  max-height: 25rem;
+  white-space: normal;
+  @media(max-width: 991px) {
+    max-height: 100%;
+  }
+  &:hover {
+    box-shadow: $z-depth-8;
+  }
+  @media(max-width: 991px) {
+    width: 300px;
+  }
+  
+  &[class*="border"] {
+    border: 1px solid $grey-base;
+    box-shadow: none;
+  }
+  iframe {
+    border-radius: 10px 10px 0 0;
+    min-height: 15.5vw;
+    @media(min-width: 1300px) {
+      min-height: 13.5em;
+    }
+    @media(min-width: 992px) and (max-width: 1024px) {
+      min-height: 16vw;
+    }
+    @media(min-width: 768px) and (max-width: 991px) {
+      min-height: 22vw;
+    }
+    @media(max-width: 767px) {
+      min-height: 27vw;
+    }
+  }
+  .card-img-top {
+    border-radius: 10px 10px 0 0;
+    max-height: 200px;
+    min-height: 185px;
+    margin: auto;
+    object-fit: cover;
+    @media(max-width: 991px) {
+      min-height: 26vw;
+      max-height: 34vw;
+    }
+  }
+  .card-body {
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 400;
+    }
+    a {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    span {
+      font-size: .9375rem;
+    }
+    .card-title {
+      a {
+        transition: $md-card-link-transition;
+        &:hover {
+          transition: $md-card-link-transition;
+        }
+      }
+    }
+    .card-text {
+      color: $md-card-text-color;
+      font-size: 15px !important;
+      font-weight: 400;
+      line-height: 1.6;
+      &.card-testimonials {
+        &::before, &::after {
+          content: '"';
+        }
+      }
+      @media(max-width: 991px) {
+        white-space: normal;
+      }
+      @media(max-width: 991px) {
+        font-size: $card-font-size !important;
+      }
+    }
+  }
+}
